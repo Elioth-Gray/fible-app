@@ -29,74 +29,166 @@ class Navbar extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              IconButton(
-                onPressed: () {
+              GestureDetector(
+                onTap: () {
                   controller.changePage(0);
                   Get.toNamed("/home");
                 },
-                icon: Obx(
-                  () => PhosphorIcon(
-                      PhosphorIconsFill.house,
-                      size: 29.0,
-                      color: controller.currentIndex.value == 0
-                          ? whiteColor
-                          : blackNavbarColor),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Obx(
+                      () => PhosphorIcon(
+                        PhosphorIconsFill.house,
+                        size: 29.0,
+                        color: controller.currentIndex.value == 0
+                            ? whiteColor
+                            : blackNavbarColor,
+                      ),
+                    ),
+                    SizedBox(height: 4), // Space between icon and text
+                    Obx(
+                      () => Text(
+                        "Beranda",
+                        style: TextStyle(
+                          color: controller.currentIndex.value == 0
+                              ? whiteColor
+                              : blackNavbarColor,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              IconButton(
-                onPressed: () {
+              GestureDetector(
+                onTap: () {
                   controller.changePage(1);
                   Get.toNamed("/reports");
                 },
-                icon: Obx(() => PhosphorIcon(
-                      PhosphorIconsFill.tree,
-                      size: 29.0,
-                      color: controller.currentIndex.value == 1
-                          ? whiteColor
-                          : blackNavbarColor,
-                    )),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Obx(
+                      () => PhosphorIcon(
+                        PhosphorIconsFill.chartBar,
+                        size: 29.0,
+                        color: controller.currentIndex.value == 1
+                            ? whiteColor
+                            : blackNavbarColor,
+                      ),
+                    ),
+                    SizedBox(height: 4),
+                    Obx(
+                      () => Text(
+                        "Laporan",
+                        style: TextStyle(
+                          color: controller.currentIndex.value == 1
+                              ? whiteColor
+                              : blackNavbarColor,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              IconButton(
-                onPressed: () {
+              GestureDetector(
+                onTap: () {
                   controller.changePage(2);
                   Get.toNamed("/plans");
                 },
-                icon: Obx(() => PhosphorIcon(
-                      controller.currentIndex.value == 2
-                          ? PhosphorIconsFill.articleMedium
-                          : PhosphorIconsRegular.articleMedium,
-                      size: 29.0,
-                      color: controller.currentIndex.value == 2
-                          ? whiteColor
-                          : blackNavbarColor,
-                    )),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Obx(
+                      () => PhosphorIcon(
+                        PhosphorIconsFill.notepad,
+                        size: 29.0,
+                        color: controller.currentIndex.value == 2
+                            ? whiteColor
+                            : blackNavbarColor,
+                      ),
+                    ),
+                    SizedBox(height: 4),
+                    Obx(
+                      () => Text(
+                        "Rencana",
+                        style: TextStyle(
+                          color: controller.currentIndex.value == 2
+                              ? whiteColor
+                              : blackNavbarColor,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              IconButton(
-                onPressed: () {
+              GestureDetector(
+                onTap: () {
                   controller.changePage(3);
                   Get.toNamed("/learns");
                 },
-                icon: Obx(() => PhosphorIcon(
-                      controller.currentIndex.value == 3
-                          ? PhosphorIconsFill.microphoneStage
-                          : PhosphorIconsRegular.microphoneStage,
-                      size: 29.0,
-                      color: Colors.white,
-                    )),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Obx(
+                      () => PhosphorIcon(
+                        PhosphorIconsFill.graduationCap,
+                        size: 29.0,
+                        color: controller.currentIndex.value == 3
+                            ? whiteColor
+                            : blackNavbarColor,
+                      ),
+                    ),
+                    SizedBox(height: 4),
+                    Obx(
+                      () => Text(
+                        "Belajar",
+                        style: TextStyle(
+                          color: controller.currentIndex.value == 3
+                              ? whiteColor
+                              : blackNavbarColor,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              IconButton(
-                onPressed: () {
+              GestureDetector(
+                onTap: () {
                   controller.changePage(4);
                   Get.toNamed("/accounts");
                 },
-                icon: Obx(() => PhosphorIcon(
-                      controller.currentIndex.value == 3
-                          ? PhosphorIconsFill.microphoneStage
-                          : PhosphorIconsRegular.microphoneStage,
-                      size: 29.0,
-                      color: Colors.white,
-                    )),
-              ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Obx(
+                      () => PhosphorIcon(
+                        PhosphorIconsFill.userCircle,
+                        size: 29.0,
+                        color: controller.currentIndex.value == 4
+                            ? whiteColor
+                            : blackNavbarColor,
+                      ),
+                    ),
+                    SizedBox(height: 4),
+                    Obx(
+                      () => Text(
+                        "Akun",
+                        style: TextStyle(
+                          color: controller.currentIndex.value == 4
+                              ? whiteColor
+                              : blackNavbarColor,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
